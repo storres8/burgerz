@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import BurgerItem from './BurgerItem'
 
-const BurgerList = (props) => {
+const BurgerList = ({burgers}) => {
+  console.log(burgers);
   return (
     <div className="BurgerList">
-      { /* Render Burger Items Here*/ }
+      { }
     </div>
   )
 }

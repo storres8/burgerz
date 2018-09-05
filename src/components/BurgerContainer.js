@@ -4,10 +4,20 @@ import BurgerFilter from './BurgerFilter'
 
 export default class BurgerContainer extends Component {
 
+  state = {
+    filterTerm: 'All'
+  }
+
+  handleFilter = (event) => {
+    console.log(event.target.value)
+  }
+
+
+
   render(){
     return (
       <div className="BurgerContainer">
-        <BurgerFilter />
+        <BurgerFilter handleFilter={this.handleFilter}/>
         <BurgerList />
       </div>
     )

@@ -6,14 +6,34 @@ import BurgerDisplay from './components/BurgerDisplay'
 
 class App extends Component {
 
+  state ={
+    burgersList:[]
+  }
+
+  componentDidMount(){
+    fetch ('http://localhost:3001/burgers')
+    .then(res => res.json())
+    .then(this.initialState)
+  }
+
+  initialState = (resData) =>{
+    this.setState({
+      burgersList: resData,
+    })
+  }
+
+
+
   render() {
     return (
       <div id="App">
-        <BurgerContainer />
+        <BurgerContainer burgers={this.state.burgersList}/>
         <BurgerDisplay />
       </div>
     );
   }
 }
+
+
 
 export default App;
