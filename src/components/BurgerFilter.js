@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const BurgerFilter = (props) => {
-    console.log("props",props);
+    // console.log(props.handleFilter);
   return (
     <div className="BurgerFilter">
       <select onChange={props.handleFilter}>
