@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
 const BurgerDisplay = (props) => {
+  // console.log(props.singleBurger)
   return (
     <div className="BurgerDisplay">
-      <img src={"" /* Insert burger Image URL here */}/>
+      <img src={props.singleBurger.imgURL}/>
       <br/>
-      <h1>Insert Burger Name Here</h1>
+      <h1>{props.singleBurger.name}</h1>
       <br/>
-      <select onChange={console.log}>
+      <select onChange={(event) => props.handleCategory(event, props.singleBurger)} value={props.singleBurger.category}>
         <option value="Relatable">Relatable</option>
         <option value="Bougie">Bougie</option>
       </select>
